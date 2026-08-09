@@ -56,7 +56,7 @@ AirMerge/
 
 | Module | What it does |
 |---|---|
-| **📡 WiFi Audit** | Monitor/managed mode toggle, live AP scan (parsed via Python), deauth (aireplay-ng / mdk4), WPA handshake capture with auto-verification |
+| **📡 WiFi Audit** | Virtual Monitor/managed mode toggle, live AP scan (parsed via Python), deauth (aireplay-ng / mdk4), WPA handshake capture with auto-verification |
 | **🐍 Bettercap** | Network scan, target selection, ARP+DNS spoofing, MITM session |
 | **🌐 Nmap** | Full subnet sweep, single-host deep scan, port/service/OS detection, firewall & security checks |
 | **💣 Metasploit** | Auto-starts PostgreSQL + msfdb, launches `msfconsole` in a persistent `tmux` session, `db_nmap` integration, session management |
@@ -79,8 +79,8 @@ AirMerge/
 
 ## 🧱 Weaknesses / Known Limitations
 
-- **🔌 Fails on isolated devices via Android hotspot** — when the machine is tethered through a phone hotspot instead of a real wireless adapter with monitor-mode support, interface creation, subnet auto-detection, and deauth/handshake capture **do not work**. AirMerge assumes a monitor-mode–capable NIC on a real WiFi network; hotspot-tethered/CG-NAT setups break the WiFi and Bettercap MITM modules.
-- **No GPU acceleration** — Hashcat runs CPU-only via PoCL; cracking speed is significantly slower than a real GPU device
+- **🔌 Fails on isolated devices via WPA3/Android hotspot** — when the machine is tethered through a phone hotspot instead of a Router, interface creation, subnet auto-detection, and deauth/handshake capture **does/doesn't work**. AirMerge assumes that you are connected via Router so if the **target is connected via WPA3/Hotspot** any factor then WIFI and Bettercap MITM modules Fails Completely.
+- **No GPU acceleration** — Hashcat runs CPU-only via PoCL; cracking speed is significantly slower than a real GPU device due to unavailability of a dedicated GPU 
 - **PMKID capture is a stub** — `wifi_pmkid()` is unimplemented (`hcxdumptool` call is commented out)
 - **`xterm`-dependent** — several modules assume `xterm` is installed and a graphical session is available; won't work well over a pure SSH/headless session
 - **Minimal input validation** — most prompts assume correctly-formatted input (MAC addresses, IPs, channel numbers); malformed input can crash a module rather than fail gracefully
