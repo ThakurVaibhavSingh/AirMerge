@@ -1,4 +1,7 @@
 <div align="center">
+<img width="1920" height="1080" alt="Screenshot_20260809_085241" src="https://github.com/user-attachments/assets/ec553281-3c10-4c37-9317-e019e3399cb3" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7f901f43-1619-4f8a-b898-838f4a1e2d8f" />
 
 # 🛰️ AirMerge
 
