@@ -23,7 +23,7 @@
 
 ---
 
-> ⚠️ **Disclaimer:** AirMerge is a personal learning project for practicing wireless security, network scanning, and offline password recovery **on networks and devices you own or have explicit written permission to test**. Unauthorized use against networks you don't control is illegal in most jurisdictions. Use responsibly.
+> ⚠️ **Disclaimer:** AirMerge is a personal learning project for practicing wireless security, network scanning, and offline password recovery **on networks and devices you own or have explicit written permission to test**. Unauthorized use against networks you don't control is illegal in most jurisdictions. Use responsibly. Thank you. 
 
 ---
 
