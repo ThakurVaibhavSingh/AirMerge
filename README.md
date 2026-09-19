@@ -1,4 +1,4 @@
-<meta name="google-site-verification" content="k3lMFBwaK4tjSzI4TxlQZFSNSJWx2m7d3W1f5i23TT4" />
+
 
 <div align="center">
 <img width="1920" height="1080" alt="AirMerge main menu - wireless audit Bash toolkit" src="https://github.com/user-attachments/assets/6e746ca6-2a56-4a77-8a94-a861a9f0a887" />
