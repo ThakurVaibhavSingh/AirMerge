@@ -44,7 +44,7 @@ print_bettercap() {
 
 print_nmap() {
     echo -e "${GREEN}"
-    figlet -f slant "WIRELESS SCANNING"
+    figlet -f slant "WImenESS SCANNING"
     figlet -f slant "By: Thakur Vaibhav Singh"
     echo -e "${NC}"
     echo -e "${CYAN} Toolkit${NC}"
@@ -168,28 +168,14 @@ GOTO_MAIN="${GOTO_MAIN:-0}"
 HASHFILE="/home/$(logname)/hash.txt"
 HCFILE="/home/$(logname)/hashcat_hash.txt"
 #hashcat and john hash locations
-
-
-check_stale_xterms() {
-    local found
-    found=$(pgrep -af xterm | grep -E "May not needed to close if its not long detailed one." 2>/dev/null)
-
-    if [[ -n "$found" ]]; then
-        warn "Found existing xterm window(s) still running:"
-        echo "$found"
-        warn "If these are leftover from a suspended/crashed session, kill manually with:"
-        printf "  %skill -9 <PID>%s\n" "${CYAN}" "${NC}"
-        printf "  %sor: pkill -f \"The xterm name\"%s\n" "${CYAN}" "${NC}"
-        printf "  %sor: pkill -f \"PID is the first code \"%s\n" "${CYAN}" "${NC}"
-        enter
-    fi
-}
+TERM_PIDFILE="/tmp/.airmerge_terms.pid"
+SECONDS="1"
+live_num="${live_num:-}"
 
 info() { printf "%s[*] %s%s\n" "${GREEN}" "$1" "${NC}"; } #$1 means here that every part inside ""
 err()  { printf "%s[!] %s%s\n" "${RED}" "$1" "${NC}"; }
 warn() { printf "%s[!] %s%s\n" "${YELLOW}" "$1" "${NC}"; }
-rel()  { printf "%s %s%s\n" "${ORANGE}" "$1" "${NC}"; }
-relnext()  { printf "%s %s%s\n" "${CYAN}" "$1" "${NC}"; }
+men()  { printf "%s %s%s\n" "${CYAN}" "$1" "${NC}"; }
 ask()  { printf "%s %s%s\n" "${PINK_DIM}" "$1" "${NC}"; }
 userask() { read -rp "$(ask "Choose >>")" choice; }
 buck() { printf "%s %s%s\n" "${RED_DIM}" "$1" "${NC}"; }
