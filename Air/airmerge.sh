@@ -22,6 +22,10 @@ source "$SCRIPT_DIR/modules/workflow.sh"
 
 
 run () {
+	if [[ $EUID -ne 0 ]]; then
+    	err "Run as root: sudo ./airattack.sh"
+    	exit 1
+	fi
 		check_stale_terminals
 		if systemctl is-active --quiet tor@default; then
         	info "Tor was running"
@@ -99,6 +103,7 @@ while true; do
 
 			0) info "Have a Nice Day"
 				save_session_state
+				cleanup
 				break;;
 
 			25) workflow ;;
